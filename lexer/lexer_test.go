@@ -6,7 +6,7 @@ import (
 	"github.com/tjandy98/interpreter-in-go/token"
 )
 
-func TestNex(t *testing.T) {
+func TestNextToken(t *testing.T) {
 
 	input := `=+(){},;`
 
