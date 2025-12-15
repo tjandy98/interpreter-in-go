@@ -56,6 +56,8 @@ func (l *Lexer) NextToken() token.Token {
 		} else if isDigit(l.ch) {
 			tok.Literal = l.readNumber()
 			tok.Type = token.INT
+			// return early to prevent call to readChar() which would cause us to miss a ch
+			return tok
 		} else {
 			tok = newToken(token.ILLEGAL, l.ch)
 		}
